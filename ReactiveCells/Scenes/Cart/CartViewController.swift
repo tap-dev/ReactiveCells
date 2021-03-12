@@ -8,6 +8,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import RxDataSources
 
 final class CartViewController: UIViewController {
     
@@ -24,16 +25,16 @@ final class CartViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        style()
+        styleView()
         
         let input = CartInput(addProduct: rx.addProduct, checkout: rx.checkout)
         let output = viewModel.transform(input)
         
         disposeBag = DisposeBag {
+            output.cart.bind(to: tableView.rx.items(dataSource: CartViewController.dataSource))
             output.cartEmpty.bind(to: tableView.rx.isEmpty(message: "Your cart is empty"))
             output.cartTotal.bind(to: amountLabel.rx.text)
-            output.showCheckout.bind { self.showCheckout() }
-            output.hideCheckout.bind { self.hideCheckout() }
+            output.checkoutVisible.bind(to: rx.isCheckoutVisible())
         }
     }
 }

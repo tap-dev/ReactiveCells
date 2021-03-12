@@ -32,6 +32,7 @@
 		F3C0935225FB8421001FFAFB /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C0935125FB8421001FFAFB /* UIViewController+Alert.swift */; };
 		F3C0939825FB8E91001FFAFB /* UITableView+EmptyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C0939725FB8E91001FFAFB /* UITableView+EmptyState.swift */; };
 		F3C093A025FB99B4001FFAFB /* CartState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C0939F25FB99B4001FFAFB /* CartState.swift */; };
+		F3C093A825FBA64E001FFAFB /* CartViewController+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C093A725FBA64E001FFAFB /* CartViewController+DataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +88,7 @@
 		F3C0935125FB8421001FFAFB /* UIViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
 		F3C0939725FB8E91001FFAFB /* UITableView+EmptyState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+EmptyState.swift"; sourceTree = "<group>"; };
 		F3C0939F25FB99B4001FFAFB /* CartState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartState.swift; sourceTree = "<group>"; };
+		F3C093A725FBA64E001FFAFB /* CartViewController+DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CartViewController+DataSource.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,6 +214,7 @@
 				F3C092DE25FB71FF001FFAFB /* Cart.storyboard */,
 				F3C092D125FB7147001FFAFB /* CartViewController.swift */,
 				F3C092EC25FB73EB001FFAFB /* CartViewController+UI.swift */,
+				F3C093A725FBA64E001FFAFB /* CartViewController+DataSource.swift */,
 				F3C092D925FB7170001FFAFB /* CartViewModel.swift */,
 				F3C0939F25FB99B4001FFAFB /* CartState.swift */,
 				F3C0934225FB8049001FFAFB /* CartSection.swift */,
@@ -466,6 +469,7 @@
 				F3C093A025FB99B4001FFAFB /* CartState.swift in Sources */,
 				F3C0939825FB8E91001FFAFB /* UITableView+EmptyState.swift in Sources */,
 				F3C0931225FB77DE001FFAFB /* UIImage+Color.swift in Sources */,
+				F3C093A825FBA64E001FFAFB /* CartViewController+DataSource.swift in Sources */,
 				F3C0934325FB8049001FFAFB /* CartSection.swift in Sources */,
 				F3C092ED25FB73EB001FFAFB /* CartViewController+UI.swift in Sources */,
 				F3C092FB25FB7602001FFAFB /* UIColor+AppColors.swift in Sources */,

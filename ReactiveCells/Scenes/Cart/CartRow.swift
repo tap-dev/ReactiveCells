@@ -18,6 +18,11 @@ extension CartRow {
         self.uuid = UUID()
         self.products = products
     }
+    
+    init(original: CartRow, products: [CartProduct]) {
+        self.uuid = original.uuid
+        self.products = products
+    }
 }
 
 extension CartRow : IdentifiableType, Equatable {

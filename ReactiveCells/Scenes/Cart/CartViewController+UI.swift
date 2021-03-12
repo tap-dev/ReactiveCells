@@ -10,7 +10,7 @@ import RxSwift
 
 extension CartViewController {
     
-    func style() {
+    func styleView() {
         title = "Cart"
         
         tableView.delegate = nil
@@ -26,14 +26,14 @@ extension CartViewController {
         checkoutButton.style(.red, size: .big)
     }
     
-    func checkout() -> Observable<UIViewController.AlertAction> {
+    fileprivate func checkout() -> Observable<UIViewController.AlertAction> {
         return alert(title: "Complete Order",
                      message: "Would you like to checkout now and complete your order?",
                      defaultTitle: "Checkout",
                      cancelTitle: "Cancel")
     }
     
-    func showCheckout() {
+    fileprivate func showCheckout() {
         UIView.animate(withDuration: 0.3) {
             self.checkoutBottom.constant = 12
             self.view.layoutIfNeeded()
@@ -61,5 +61,15 @@ extension Reactive where Base: CartViewController {
             .flatMapLatest { s, _ in s.checkout() }
             .filter { $0 == .default }
             .map { _ in }
+    }
+    
+    func isCheckoutVisible() -> Binder<Bool> {
+        return Binder(base) { vc, visible in
+            if visible {
+                vc.showCheckout()
+            } else {
+                vc.hideCheckout()
+            }
+        }
     }
 }

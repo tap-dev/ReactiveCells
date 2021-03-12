@@ -16,8 +16,7 @@ struct CartOutput {
     let cart: Observable<[CartSection]>
     let cartTotal: Observable<String>
     let cartEmpty: Observable<Bool>
-    let showCheckout: Observable<Void>
-    let hideCheckout: Observable<Void>
+    let checkoutVisible: Observable<Bool>
 }
 
 enum CartAction {
@@ -30,14 +29,8 @@ struct CartViewModel {
     
     private let incrementProductSubject = PublishSubject<CartProduct>()
     private let decrementProductSubject = PublishSubject<CartProduct>()
-    
-    var incrementProduct: AnyObserver<CartProduct> {
-        return incrementProductSubject.asObserver()
-    }
-    
-    var decrementProduct: AnyObserver<CartProduct> {
-        return decrementProductSubject.asObserver()
-    }
+    var incrementProduct: AnyObserver<CartProduct> { incrementProductSubject.asObserver() }
+    var decrementProduct: AnyObserver<CartProduct> { decrementProductSubject.asObserver() }
     
     func transform(_ input: CartInput) -> CartOutput {
         
@@ -57,8 +50,7 @@ struct CartViewModel {
             cart: cart,
             cartTotal: .just(""),
             cartEmpty: .just(true),
-            showCheckout: .just(()),
-            hideCheckout: .never())
+            checkoutVisible: .just(false)) // need both?
     }
     
     func randomProduct() -> () -> CartAction {

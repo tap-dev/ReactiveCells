@@ -15,6 +15,8 @@ struct CartProduct {
     let image: String
 }
 
+extension CartProduct: Equatable { }
+
 extension CartProduct {
     var productImage: UIImage? {
         return UIImage(named: image)
