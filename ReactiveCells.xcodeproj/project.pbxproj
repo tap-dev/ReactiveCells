@@ -9,12 +9,21 @@
 /* Begin PBXBuildFile section */
 		F3C0929925FB7087001FFAFB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C0929825FB7087001FFAFB /* AppDelegate.swift */; };
 		F3C0929B25FB7087001FFAFB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C0929A25FB7087001FFAFB /* SceneDelegate.swift */; };
-		F3C0929D25FB7087001FFAFB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C0929C25FB7087001FFAFB /* ViewController.swift */; };
-		F3C092A025FB7087001FFAFB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3C0929E25FB7087001FFAFB /* Main.storyboard */; };
 		F3C092A225FB7089001FFAFB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3C092A125FB7089001FFAFB /* Assets.xcassets */; };
 		F3C092A525FB7089001FFAFB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3C092A325FB7089001FFAFB /* LaunchScreen.storyboard */; };
 		F3C092B025FB708A001FFAFB /* ReactiveCellsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C092AF25FB708A001FFAFB /* ReactiveCellsTests.swift */; };
 		F3C092BB25FB708A001FFAFB /* ReactiveCellsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C092BA25FB708A001FFAFB /* ReactiveCellsUITests.swift */; };
+		F3C092D225FB7147001FFAFB /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C092D125FB7147001FFAFB /* CartViewController.swift */; };
+		F3C092DA25FB7170001FFAFB /* CartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C092D925FB7170001FFAFB /* CartViewModel.swift */; };
+		F3C092DF25FB71FF001FFAFB /* Cart.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3C092DE25FB71FF001FFAFB /* Cart.storyboard */; };
+		F3C092ED25FB73EB001FFAFB /* CartViewController+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C092EC25FB73EB001FFAFB /* CartViewController+Style.swift */; };
+		F3C092F625FB7519001FFAFB /* UIFont+AppFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C092F525FB7519001FFAFB /* UIFont+AppFonts.swift */; };
+		F3C092FB25FB7602001FFAFB /* UIColor+AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C092FA25FB7602001FFAFB /* UIColor+AppColors.swift */; };
+		F3C0930325FB76CE001FFAFB /* UILabel+AppStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C0930225FB76CE001FFAFB /* UILabel+AppStyles.swift */; };
+		F3C0930825FB775D001FFAFB /* UIButton+AppStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C0930725FB775D001FFAFB /* UIButton+AppStyles.swift */; };
+		F3C0930D25FB77B1001FFAFB /* UIColor+Adjustment.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C0930C25FB77B1001FFAFB /* UIColor+Adjustment.swift */; };
+		F3C0931225FB77DE001FFAFB /* UIImage+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C0931125FB77DE001FFAFB /* UIImage+Color.swift */; };
+		F3C0931725FB7856001FFAFB /* UIView+AppStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C0931625FB7856001FFAFB /* UIView+AppStyles.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,8 +47,6 @@
 		F3C0929525FB7087001FFAFB /* ReactiveCells.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReactiveCells.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3C0929825FB7087001FFAFB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F3C0929A25FB7087001FFAFB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F3C0929C25FB7087001FFAFB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		F3C0929F25FB7087001FFAFB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F3C092A125FB7089001FFAFB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F3C092A425FB7089001FFAFB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F3C092A625FB7089001FFAFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +56,17 @@
 		F3C092B625FB708A001FFAFB /* ReactiveCellsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReactiveCellsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3C092BA25FB708A001FFAFB /* ReactiveCellsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactiveCellsUITests.swift; sourceTree = "<group>"; };
 		F3C092BC25FB708A001FFAFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F3C092D125FB7147001FFAFB /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
+		F3C092D925FB7170001FFAFB /* CartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewModel.swift; sourceTree = "<group>"; };
+		F3C092DE25FB71FF001FFAFB /* Cart.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Cart.storyboard; sourceTree = "<group>"; };
+		F3C092EC25FB73EB001FFAFB /* CartViewController+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CartViewController+Style.swift"; sourceTree = "<group>"; };
+		F3C092F525FB7519001FFAFB /* UIFont+AppFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+AppFonts.swift"; sourceTree = "<group>"; };
+		F3C092FA25FB7602001FFAFB /* UIColor+AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+AppColors.swift"; sourceTree = "<group>"; };
+		F3C0930225FB76CE001FFAFB /* UILabel+AppStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+AppStyles.swift"; sourceTree = "<group>"; };
+		F3C0930725FB775D001FFAFB /* UIButton+AppStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+AppStyles.swift"; sourceTree = "<group>"; };
+		F3C0930C25FB77B1001FFAFB /* UIColor+Adjustment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Adjustment.swift"; sourceTree = "<group>"; };
+		F3C0931125FB77DE001FFAFB /* UIImage+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Color.swift"; sourceTree = "<group>"; };
+		F3C0931625FB7856001FFAFB /* UIView+AppStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+AppStyles.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,11 +119,9 @@
 			children = (
 				F3C0929825FB7087001FFAFB /* AppDelegate.swift */,
 				F3C0929A25FB7087001FFAFB /* SceneDelegate.swift */,
-				F3C0929C25FB7087001FFAFB /* ViewController.swift */,
-				F3C0929E25FB7087001FFAFB /* Main.storyboard */,
-				F3C092A125FB7089001FFAFB /* Assets.xcassets */,
-				F3C092A325FB7089001FFAFB /* LaunchScreen.storyboard */,
-				F3C092A625FB7089001FFAFB /* Info.plist */,
+				F3C092CE25FB70ED001FFAFB /* Scenes */,
+				F3C092F125FB7499001FFAFB /* Extensions */,
+				F3C092CF25FB70FC001FFAFB /* Resources */,
 			);
 			path = ReactiveCells;
 			sourceTree = "<group>";
@@ -126,6 +142,49 @@
 				F3C092BC25FB708A001FFAFB /* Info.plist */,
 			);
 			path = ReactiveCellsUITests;
+			sourceTree = "<group>";
+		};
+		F3C092CE25FB70ED001FFAFB /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				F3C092D025FB712D001FFAFB /* Cart */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		F3C092CF25FB70FC001FFAFB /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F3C092A125FB7089001FFAFB /* Assets.xcassets */,
+				F3C092A325FB7089001FFAFB /* LaunchScreen.storyboard */,
+				F3C092A625FB7089001FFAFB /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		F3C092D025FB712D001FFAFB /* Cart */ = {
+			isa = PBXGroup;
+			children = (
+				F3C092DE25FB71FF001FFAFB /* Cart.storyboard */,
+				F3C092D125FB7147001FFAFB /* CartViewController.swift */,
+				F3C092EC25FB73EB001FFAFB /* CartViewController+Style.swift */,
+				F3C092D925FB7170001FFAFB /* CartViewModel.swift */,
+			);
+			path = Cart;
+			sourceTree = "<group>";
+		};
+		F3C092F125FB7499001FFAFB /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F3C092F525FB7519001FFAFB /* UIFont+AppFonts.swift */,
+				F3C092FA25FB7602001FFAFB /* UIColor+AppColors.swift */,
+				F3C0930225FB76CE001FFAFB /* UILabel+AppStyles.swift */,
+				F3C0930725FB775D001FFAFB /* UIButton+AppStyles.swift */,
+				F3C0931625FB7856001FFAFB /* UIView+AppStyles.swift */,
+				F3C0930C25FB77B1001FFAFB /* UIColor+Adjustment.swift */,
+				F3C0931125FB77DE001FFAFB /* UIImage+Color.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,9 +290,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3C092DF25FB71FF001FFAFB /* Cart.storyboard in Resources */,
 				F3C092A525FB7089001FFAFB /* LaunchScreen.storyboard in Resources */,
 				F3C092A225FB7089001FFAFB /* Assets.xcassets in Resources */,
-				F3C092A025FB7087001FFAFB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,8 +317,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F3C0929D25FB7087001FFAFB /* ViewController.swift in Sources */,
+				F3C0930325FB76CE001FFAFB /* UILabel+AppStyles.swift in Sources */,
+				F3C0930825FB775D001FFAFB /* UIButton+AppStyles.swift in Sources */,
+				F3C0930D25FB77B1001FFAFB /* UIColor+Adjustment.swift in Sources */,
+				F3C092D225FB7147001FFAFB /* CartViewController.swift in Sources */,
+				F3C092F625FB7519001FFAFB /* UIFont+AppFonts.swift in Sources */,
+				F3C092DA25FB7170001FFAFB /* CartViewModel.swift in Sources */,
+				F3C0931725FB7856001FFAFB /* UIView+AppStyles.swift in Sources */,
 				F3C0929925FB7087001FFAFB /* AppDelegate.swift in Sources */,
+				F3C0931225FB77DE001FFAFB /* UIImage+Color.swift in Sources */,
+				F3C092ED25FB73EB001FFAFB /* CartViewController+Style.swift in Sources */,
+				F3C092FB25FB7602001FFAFB /* UIColor+AppColors.swift in Sources */,
 				F3C0929B25FB7087001FFAFB /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -296,14 +364,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		F3C0929E25FB7087001FFAFB /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F3C0929F25FB7087001FFAFB /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		F3C092A325FB7089001FFAFB /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -438,15 +498,15 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9ZR496RB3Q;
-				INFOPLIST_FILE = ReactiveCells/Info.plist;
+				INFOPLIST_FILE = ReactiveCells/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.madebyhive.ReactiveCells;
+				PRODUCT_BUNDLE_IDENTIFIER = co.tapdev.ReactiveCells;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -457,15 +517,15 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9ZR496RB3Q;
-				INFOPLIST_FILE = ReactiveCells/Info.plist;
+				INFOPLIST_FILE = ReactiveCells/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.madebyhive.ReactiveCells;
+				PRODUCT_BUNDLE_IDENTIFIER = co.tapdev.ReactiveCells;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
