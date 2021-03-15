@@ -2,6 +2,8 @@
 
 An example of binding events from custom controls inside of table view cells, to the business logic of a view model. This demo illustrates this technique using a checkout UI where multiple products of the same type can be added or removed using a stepper style component inside of each cell.
 
+![Reactive Cells Screenshot](https://user-images.githubusercontent.com/10616345/111194385-0eddf700-85b3-11eb-954b-279a375ba36e.png)
+
 The view model has 2 private subjects, one for incrementing a product and another for decrementing a product. These are safely exposed to the outside world as observers.
 
 ```swift
@@ -76,6 +78,23 @@ extension Reactive where Base: CartCell {
     var incrementTap: ControlEvent<Void> { base.plusButton.rx.tap }
     var decrementTap: ControlEvent<Void> { base.minusButton.rx.tap }
 }
+
+struct CartCellViewModel {
+    let row: CartRow
+    var product: CartProduct! { row.products.first }
+    var image: UIImage? { product?.productImage }
+    var name: String? { product?.title }
+    var price: String? { row.rowTotal.decimalCurrencyString }
+    var count: String { "\(row.products.count)" }
+}
 ```
 
 This demo uses RxDataSources to animate the changes 😎.
+
+```swift
+let cell: CartCell = tableView.dequeueCell(for: indexPath)
+cell.bind(viewModel: CartCellViewModel(row: row),
+          incrementObserver: self.viewModel.incrementProduct,
+          decrementObserver: self.viewModel.decrementProduct)
+return cell
+```
