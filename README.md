@@ -2,6 +2,10 @@
 
 An example of binding events from custom controls inside of table view cells, to the business logic of a view model. This demo illustrates this technique using a checkout UI where multiple products of the same type can be added or removed using a stepper style component inside of each cell.
 
+Checkout the full article on [tapdev][1]
+
+[1]: https://tapdev.co/2021/03/15/how-to-bind-button-taps-in-custom-cells-to-your-view-model/
+
 ![Reactive Cells Screenshot](https://user-images.githubusercontent.com/10616345/111194385-0eddf700-85b3-11eb-954b-279a375ba36e.png)
 
 The view model has 2 private subjects, one for incrementing a product and another for decrementing a product. These are safely exposed to the outside world as observers.
