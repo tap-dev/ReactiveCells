@@ -30,10 +30,33 @@ final class CartViewController: UIViewController {
         let output = viewModel.bind(CartInput(addProduct: rx.addProduct, checkout: rx.checkout))
         
         disposeBag = DisposeBag {
-            output.cart.bind(to: tableView.rx.items(dataSource: CartViewController.dataSource))
+            output.cart.bind(to: tableView.rx.items(dataSource: dataSource()))
             output.cartEmpty.bind(to: tableView.rx.isEmpty(message: "Your cart is empty"))
             output.cartTotal.bind(to: amountLabel.rx.text)
             output.checkoutVisible.bind(to: rx.isCheckoutVisible)
         }
+    }
+}
+
+extension CartViewController {
+    func dataSource() -> RxTableViewSectionedAnimatedDataSource<CartSection> {
+        let animationConfiguration = AnimationConfiguration(insertAnimation: .left, reloadAnimation: .fade, deleteAnimation: .right)
+        return RxTableViewSectionedAnimatedDataSource(animationConfiguration: animationConfiguration,
+                                                      
+          decideViewTransition: { _, _, changeset in
+            changeset.isEmpty ? .reload : .animated
+          },
+
+          configureCell: { _, tableView, indexPath, row in
+            let cell: CartCell = tableView.dequeueCell(for: indexPath)
+            cell.bind(viewModel: CartCellViewModel(row: row),
+                      incrementObserver: self.viewModel.incrementProduct,
+                      decrementObserver: self.viewModel.decrementProduct)
+            return cell
+          },
+              
+          canEditRowAtIndexPath: { _, _ in
+            false
+          })
     }
 }

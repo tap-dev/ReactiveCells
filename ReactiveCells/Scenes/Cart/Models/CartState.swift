@@ -17,16 +17,11 @@ struct CartState {
     func execute(_ action: CartAction) -> CartState {
         guard self.sections.count < 2 else { fatalError("CartState only supports 1 section") }
         switch action {
-        
         case .add(let product):
             return CartState([add(product, to: self.sections[0])])
-        
         case .increment(let product):
-            print("INCREMENT")
             return CartState([increment(product, in: self.sections[0])])
-        
         case .decrement(let product):
-            print("DECREMENT")
             return CartState([decrement(product, in: self.sections[0])])
         }
     }
