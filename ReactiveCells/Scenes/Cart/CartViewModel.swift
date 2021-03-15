@@ -16,7 +16,7 @@ struct CartOutput {
     let cart: Observable<[CartSection]>
     let cartTotal: Observable<String>
     let cartEmpty: Observable<Bool>
-    let checkoutVisible: Observable<Bool>
+    let checkoutVisible: Observable<(visible: Bool, animated: Bool)>
 }
 
 enum CartAction {
@@ -32,25 +32,41 @@ struct CartViewModel {
     var incrementProduct: AnyObserver<CartProduct> { incrementProductSubject.asObserver() }
     var decrementProduct: AnyObserver<CartProduct> { decrementProductSubject.asObserver() }
     
-    func transform(_ input: CartInput) -> CartOutput {
+    func bind(_ input: CartInput) -> CartOutput {
         
-        let cart = Observable.merge(input.addProduct.map(randomProduct()))
-            .scan(CartState([])) { (state, action) in
+        //        let increment = incrementProductSubject
+        //            .asObservable()
+        //
+        //        let decrement = decrementProductSubject
+        //            .asObservable()
+        
+        let cart = Observable
+            .merge(
+                input.addProduct.map(randomProduct()))
+            .scan(CartState([CartSection([])])) { (state, action) in
                 state.execute(action)
             }
             .map { $0.sections }
+            .share()
         
-//        let increment = incrementProductSubject
-//            .asObservable()
-//
-//        let decrement = decrementProductSubject
-//            .asObservable()
+        let cartTotal = cart
+            .map { $0[0].sectionTotal }
+            .map { $0.decimalCurrencyString }
         
+        let cartEmpty = cart
+            .map { $0[0].rows }
+            .map { $0.count == 0 }
+        
+        let checkoutVisible = cart
+            .map { $0[0].rows.count }
+            .map { $0 == 0 ? (visible: false, animated: true) : (visible: true, animated: true) }
+            .startWith((visible: false, animated: false))
+
         return CartOutput(
             cart: cart,
-            cartTotal: .just(""),
-            cartEmpty: .just(true),
-            checkoutVisible: .just(false)) // need both?
+            cartTotal: cartTotal,
+            cartEmpty: cartEmpty,
+            checkoutVisible: checkoutVisible)
     }
     
     func randomProduct() -> () -> CartAction {

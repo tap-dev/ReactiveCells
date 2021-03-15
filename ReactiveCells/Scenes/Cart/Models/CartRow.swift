@@ -23,6 +23,12 @@ extension CartRow {
         self.uuid = original.uuid
         self.products = products
     }
+    
+    var rowTotal: Int {
+        products.reduce(0) { result, product in
+            result + product.price
+        }
+    }
 }
 
 extension CartRow : IdentifiableType, Equatable {

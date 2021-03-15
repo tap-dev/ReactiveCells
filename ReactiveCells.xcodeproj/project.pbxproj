@@ -33,6 +33,11 @@
 		F3C0939825FB8E91001FFAFB /* UITableView+EmptyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C0939725FB8E91001FFAFB /* UITableView+EmptyState.swift */; };
 		F3C093A025FB99B4001FFAFB /* CartState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C0939F25FB99B4001FFAFB /* CartState.swift */; };
 		F3C093A825FBA64E001FFAFB /* CartViewController+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C093A725FBA64E001FFAFB /* CartViewController+DataSource.swift */; };
+		F3F1B4B825FF3AC400D8A1D2 /* CartCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3F1B4B625FF3AC400D8A1D2 /* CartCell.xib */; };
+		F3F1B4B925FF3AC400D8A1D2 /* CartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F1B4B725FF3AC400D8A1D2 /* CartCell.swift */; };
+		F3F1B4C425FF3D3000D8A1D2 /* UITableView+Cells.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F1B4C325FF3D3000D8A1D2 /* UITableView+Cells.swift */; };
+		F3F1B4C925FF3D6A00D8A1D2 /* ReuseableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F1B4C825FF3D6A00D8A1D2 /* ReuseableView.swift */; };
+		F3F1B4CE25FF401300D8A1D2 /* Int+DecimalCurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F1B4CD25FF401300D8A1D2 /* Int+DecimalCurrency.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +94,11 @@
 		F3C0939725FB8E91001FFAFB /* UITableView+EmptyState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+EmptyState.swift"; sourceTree = "<group>"; };
 		F3C0939F25FB99B4001FFAFB /* CartState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartState.swift; sourceTree = "<group>"; };
 		F3C093A725FBA64E001FFAFB /* CartViewController+DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CartViewController+DataSource.swift"; sourceTree = "<group>"; };
+		F3F1B4B625FF3AC400D8A1D2 /* CartCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CartCell.xib; sourceTree = "<group>"; };
+		F3F1B4B725FF3AC400D8A1D2 /* CartCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartCell.swift; sourceTree = "<group>"; };
+		F3F1B4C325FF3D3000D8A1D2 /* UITableView+Cells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Cells.swift"; sourceTree = "<group>"; };
+		F3F1B4C825FF3D6A00D8A1D2 /* ReuseableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReuseableView.swift; sourceTree = "<group>"; };
+		F3F1B4CD25FF401300D8A1D2 /* Int+DecimalCurrency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+DecimalCurrency.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -216,10 +226,8 @@
 				F3C092EC25FB73EB001FFAFB /* CartViewController+UI.swift */,
 				F3C093A725FBA64E001FFAFB /* CartViewController+DataSource.swift */,
 				F3C092D925FB7170001FFAFB /* CartViewModel.swift */,
-				F3C0939F25FB99B4001FFAFB /* CartState.swift */,
-				F3C0934225FB8049001FFAFB /* CartSection.swift */,
-				F3C0934725FB8087001FFAFB /* CartRow.swift */,
-				F3C0934C25FB80D1001FFAFB /* CartProduct.swift */,
+				F3F1B4B425FF39E200D8A1D2 /* Models */,
+				F3F1B4B525FF39F200D8A1D2 /* Cells */,
 			);
 			path = Cart;
 			sourceTree = "<group>";
@@ -236,8 +244,31 @@
 				F3C0931125FB77DE001FFAFB /* UIImage+Color.swift */,
 				F3C0935125FB8421001FFAFB /* UIViewController+Alert.swift */,
 				F3C0939725FB8E91001FFAFB /* UITableView+EmptyState.swift */,
+				F3F1B4C325FF3D3000D8A1D2 /* UITableView+Cells.swift */,
+				F3F1B4C825FF3D6A00D8A1D2 /* ReuseableView.swift */,
+				F3F1B4CD25FF401300D8A1D2 /* Int+DecimalCurrency.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		F3F1B4B425FF39E200D8A1D2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F3C0939F25FB99B4001FFAFB /* CartState.swift */,
+				F3C0934225FB8049001FFAFB /* CartSection.swift */,
+				F3C0934725FB8087001FFAFB /* CartRow.swift */,
+				F3C0934C25FB80D1001FFAFB /* CartProduct.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F3F1B4B525FF39F200D8A1D2 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				F3F1B4B725FF3AC400D8A1D2 /* CartCell.swift */,
+				F3F1B4B625FF3AC400D8A1D2 /* CartCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -348,6 +379,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F3C092DF25FB71FF001FFAFB /* Cart.storyboard in Resources */,
+				F3F1B4B825FF3AC400D8A1D2 /* CartCell.xib in Resources */,
 				F3C092A525FB7089001FFAFB /* LaunchScreen.storyboard in Resources */,
 				F3C092A225FB7089001FFAFB /* Assets.xcassets in Resources */,
 			);
@@ -457,7 +489,9 @@
 			files = (
 				F3C0934D25FB80D1001FFAFB /* CartProduct.swift in Sources */,
 				F3C0930325FB76CE001FFAFB /* UILabel+AppStyles.swift in Sources */,
+				F3F1B4C425FF3D3000D8A1D2 /* UITableView+Cells.swift in Sources */,
 				F3C0930825FB775D001FFAFB /* UIButton+AppStyles.swift in Sources */,
+				F3F1B4CE25FF401300D8A1D2 /* Int+DecimalCurrency.swift in Sources */,
 				F3C0930D25FB77B1001FFAFB /* UIColor+Adjustment.swift in Sources */,
 				F3C092D225FB7147001FFAFB /* CartViewController.swift in Sources */,
 				F3C092F625FB7519001FFAFB /* UIFont+AppFonts.swift in Sources */,
@@ -469,9 +503,11 @@
 				F3C093A025FB99B4001FFAFB /* CartState.swift in Sources */,
 				F3C0939825FB8E91001FFAFB /* UITableView+EmptyState.swift in Sources */,
 				F3C0931225FB77DE001FFAFB /* UIImage+Color.swift in Sources */,
+				F3F1B4C925FF3D6A00D8A1D2 /* ReuseableView.swift in Sources */,
 				F3C093A825FBA64E001FFAFB /* CartViewController+DataSource.swift in Sources */,
 				F3C0934325FB8049001FFAFB /* CartSection.swift in Sources */,
 				F3C092ED25FB73EB001FFAFB /* CartViewController+UI.swift in Sources */,
+				F3F1B4B925FF3AC400D8A1D2 /* CartCell.swift in Sources */,
 				F3C092FB25FB7602001FFAFB /* UIColor+AppColors.swift in Sources */,
 				F3C0929B25FB7087001FFAFB /* SceneDelegate.swift in Sources */,
 			);

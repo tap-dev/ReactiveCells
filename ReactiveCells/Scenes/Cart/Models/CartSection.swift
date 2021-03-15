@@ -18,6 +18,12 @@ extension CartSection {
         self.uuid = UUID()
         self.rows = rows
     }
+    
+    var sectionTotal: Int {
+        rows.reduce(0) { result, row in
+            result + row.rowTotal
+        }
+    }
 }
 
 extension CartSection: AnimatableSectionModelType {

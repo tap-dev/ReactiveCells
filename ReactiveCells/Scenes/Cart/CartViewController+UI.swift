@@ -10,11 +10,12 @@ import RxSwift
 
 extension CartViewController {
     
-    func styleView() {
+    func configureView() {
         title = "Cart"
         
         tableView.delegate = nil
         tableView.dataSource = nil
+        tableView.registerCell(identifier: CartCell.reuseIdentifier)
         tableView.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 12, right: 0)
         tableView.tableFooterView = UIView()
@@ -33,15 +34,25 @@ extension CartViewController {
                      cancelTitle: "Cancel")
     }
     
-    fileprivate func showCheckout() {
-        UIView.animate(withDuration: 0.3) {
+    fileprivate func showCheckout(animated: Bool = true) {
+        if animated {
+            UIView.animate(withDuration: 0.3) {
+                self.checkoutBottom.constant = 12
+                self.view.layoutIfNeeded()
+            }
+        } else {
             self.checkoutBottom.constant = 12
             self.view.layoutIfNeeded()
         }
     }
     
-    func hideCheckout() {
-        UIView.animate(withDuration: 0.3) {
+    func hideCheckout(animated: Bool = true) {
+        if animated {
+            UIView.animate(withDuration: 0.3) {
+                self.checkoutBottom.constant = -200
+                self.view.layoutIfNeeded()
+            }
+        } else {
             self.checkoutBottom.constant = -200
             self.view.layoutIfNeeded()
         }
@@ -63,12 +74,12 @@ extension Reactive where Base: CartViewController {
             .map { _ in }
     }
     
-    func isCheckoutVisible() -> Binder<Bool> {
-        return Binder(base) { vc, visible in
-            if visible {
-                vc.showCheckout()
+    var isCheckoutVisible: Binder<(visible: Bool, animated: Bool)> {
+        return Binder(base) { vc, state in
+            if state.visible {
+                vc.showCheckout(animated: state.animated)
             } else {
-                vc.hideCheckout()
+                vc.hideCheckout(animated: state.animated)
             }
         }
     }

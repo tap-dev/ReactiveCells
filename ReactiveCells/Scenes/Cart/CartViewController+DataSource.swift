@@ -14,8 +14,8 @@ extension CartViewController {
         let animationConfiguration = AnimationConfiguration(insertAnimation: .left, reloadAnimation: .fade, deleteAnimation: .right)
         return RxTableViewSectionedAnimatedDataSource(animationConfiguration: animationConfiguration,
               
-          configureCell: { _, tableView, indexPath, item in
-            return UITableViewCell()
+          configureCell: { _, tableView, indexPath, row in
+            CartCellConfigurator.cellFrom(tableView, at: indexPath, configuredWith: row)
           },
               
           canEditRowAtIndexPath: { _, _ in

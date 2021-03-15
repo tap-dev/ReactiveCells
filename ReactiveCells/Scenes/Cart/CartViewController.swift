@@ -25,16 +25,15 @@ final class CartViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        styleView()
+        configureView()
         
-        let input = CartInput(addProduct: rx.addProduct, checkout: rx.checkout)
-        let output = viewModel.transform(input)
+        let output = viewModel.bind(CartInput(addProduct: rx.addProduct, checkout: rx.checkout))
         
         disposeBag = DisposeBag {
             output.cart.bind(to: tableView.rx.items(dataSource: CartViewController.dataSource))
             output.cartEmpty.bind(to: tableView.rx.isEmpty(message: "Your cart is empty"))
             output.cartTotal.bind(to: amountLabel.rx.text)
-            output.checkoutVisible.bind(to: rx.isCheckoutVisible())
+            output.checkoutVisible.bind(to: rx.isCheckoutVisible)
         }
     }
 }
