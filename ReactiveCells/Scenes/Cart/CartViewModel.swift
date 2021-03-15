@@ -26,7 +26,6 @@ enum CartAction {
 }
 
 struct CartViewModel {
-    
     private let incrementProductSubject = PublishSubject<CartProduct>()
     private let decrementProductSubject = PublishSubject<CartProduct>()
     var incrementProduct: AnyObserver<CartProduct> { incrementProductSubject.asObserver() }
@@ -49,7 +48,8 @@ struct CartViewModel {
             cart: cart,
             cartTotal: cart.map(cartTotal()),
             cartEmpty: cart.map(cartEmpty()),
-            checkoutVisible: cart.map(checkoutVisible()).startWith((visible: false, animated: false)))
+            checkoutVisible: cart.map(checkoutVisible())
+                .startWith((visible: false, animated: false)))
     }
     
     func randomProduct() -> () -> CartAction {
