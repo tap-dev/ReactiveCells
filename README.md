@@ -47,7 +47,7 @@ final class CartCell: UITableViewCell {
 extension Reactive where Base: CartCell {
     var incrementTap: ControlEvent { base.plusButton.rx.tap }
     var decrementTap: ControlEvent { base.minusButton.rx.tap }
-}```
+}
 
 extension CartCell {
     func bind(viewModel: CartCellViewModel, incrementObserver: AnyObserver<CartProduct>, decrementObserver: AnyObserver<CartProduct>) {
