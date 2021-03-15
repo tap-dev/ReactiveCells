@@ -1,6 +1,6 @@
 # Reactive Cells
 
-An example of binding events from custom controls inside of table view cells, to the business logic of a view model. This demo illustrates this technique using a checkout UI where multiple products of the same type can be added or removed using a stepper style component inside of each cell.
+An example of binding events from custom controls inside of table view cells, to the business logic of a view model. This demo illustrates the technique using a checkout UI where multiple products of the same type can be added or removed using a stepper style component inside of each cell.
 
 Checkout the full article on [tapdev][1]
 
@@ -21,23 +21,12 @@ var decrementProduct: AnyObserver<CartProduct> { decrementProductSubject.asObser
 
         let cart = Observable
             .merge(
-                input.addProduct.map { CartAction.add(CartProduct.random()) },
-                input.checkout.map { CartAction.checkout },
                 incrementProductSubject.map { CartAction.increment($0) },
-                decrementProductSubject.map { CartAction.decrement($0) })
+                decrementProductSubject.map { CartAction.decrement($0) }
+            )
+            ...
 
-            .scan(CartState.empty()) { (state, action) in
-                state.execute(action)
-            }
-            .map { $0.sections }
-            .share()
-
-        return CartOutput(
-            cart: cart,
-            cartTotal: cart.map(cartTotal()),
-            cartEmpty: cart.map(cartEmpty()),
-            checkoutVisible: cart.map(checkoutVisible())
-                .startWith((visible: false, animated: false)))
+        return CartOutput(...)
     }
 ```
 
@@ -45,12 +34,8 @@ The cell is then passed a reference to these subject backed observers, and can t
 
 ```swift
 final class CartCell: UITableViewCell {
-    @IBOutlet weak var thumbImageView: UIImageView!
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var minusButton: UIButton!
     @IBOutlet weak var plusButton: UIButton!
-    @IBOutlet weak var countLabel: UILabel!
 
     private(set) var disposeBag = DisposeBag()
     override func prepareForReuse() {
@@ -59,12 +44,13 @@ final class CartCell: UITableViewCell {
     }
 }
 
+extension Reactive where Base: CartCell {
+    var incrementTap: ControlEvent { base.plusButton.rx.tap }
+    var decrementTap: ControlEvent { base.minusButton.rx.tap }
+}```
+
 extension CartCell {
     func bind(viewModel: CartCellViewModel, incrementObserver: AnyObserver<CartProduct>, decrementObserver: AnyObserver<CartProduct>) {
-        thumbImageView.image = viewModel.image
-        nameLabel.text = viewModel.name
-        priceLabel.text = viewModel.price
-        countLabel.text = viewModel.count
 
         rx.incrementTap
             .map { viewModel.product }
@@ -77,28 +63,4 @@ extension CartCell {
             .disposed(by: disposeBag)
     }
 }
-
-extension Reactive where Base: CartCell {
-    var incrementTap: ControlEvent<Void> { base.plusButton.rx.tap }
-    var decrementTap: ControlEvent<Void> { base.minusButton.rx.tap }
-}
-
-struct CartCellViewModel {
-    let row: CartRow
-    var product: CartProduct! { row.products.first }
-    var image: UIImage? { product?.productImage }
-    var name: String? { product?.title }
-    var price: String? { row.rowTotal.decimalCurrencyString }
-    var count: String { "\(row.products.count)" }
-}
-```
-
-This demo uses RxDataSources to animate the changes 😎.
-
-```swift
-let cell: CartCell = tableView.dequeueCell(for: indexPath)
-cell.bind(viewModel: CartCellViewModel(row: row),
-          incrementObserver: self.viewModel.incrementProduct,
-          decrementObserver: self.viewModel.decrementProduct)
-return cell
 ```
