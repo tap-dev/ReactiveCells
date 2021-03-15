@@ -13,7 +13,6 @@
 		F3C0929B25FB7087001FFAFB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C0929A25FB7087001FFAFB /* SceneDelegate.swift */; };
 		F3C092A225FB7089001FFAFB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3C092A125FB7089001FFAFB /* Assets.xcassets */; };
 		F3C092A525FB7089001FFAFB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3C092A325FB7089001FFAFB /* LaunchScreen.storyboard */; };
-		F3C092BB25FB708A001FFAFB /* ReactiveCellsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C092BA25FB708A001FFAFB /* ReactiveCellsUITests.swift */; };
 		F3C092D225FB7147001FFAFB /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C092D125FB7147001FFAFB /* CartViewController.swift */; };
 		F3C092DA25FB7170001FFAFB /* CartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C092D925FB7170001FFAFB /* CartViewModel.swift */; };
 		F3C092DF25FB71FF001FFAFB /* Cart.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3C092DE25FB71FF001FFAFB /* Cart.storyboard */; };
@@ -47,13 +46,6 @@
 			remoteGlobalIDString = F3C0929425FB7087001FFAFB;
 			remoteInfo = ReactiveCells;
 		};
-		F3C092B725FB708A001FFAFB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F3C0928D25FB7087001FFAFB /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = F3C0929425FB7087001FFAFB;
-			remoteInfo = ReactiveCells;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -71,9 +63,6 @@
 		F3C092A625FB7089001FFAFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F3C092AB25FB708A001FFAFB /* ReactiveCellsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReactiveCellsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3C092B125FB708A001FFAFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F3C092B625FB708A001FFAFB /* ReactiveCellsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReactiveCellsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F3C092BA25FB708A001FFAFB /* ReactiveCellsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactiveCellsUITests.swift; sourceTree = "<group>"; };
-		F3C092BC25FB708A001FFAFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F3C092D125FB7147001FFAFB /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
 		F3C092D925FB7170001FFAFB /* CartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewModel.swift; sourceTree = "<group>"; };
 		F3C092DE25FB71FF001FFAFB /* Cart.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Cart.storyboard; sourceTree = "<group>"; };
@@ -116,13 +105,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F3C092B325FB708A001FFAFB /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -151,7 +133,6 @@
 			children = (
 				F3C0929725FB7087001FFAFB /* ReactiveCells */,
 				F3C092AE25FB708A001FFAFB /* ReactiveCellsTests */,
-				F3C092B925FB708A001FFAFB /* ReactiveCellsUITests */,
 				F3C0929625FB7087001FFAFB /* Products */,
 				9488FE0253EFB6BB09D58D23 /* Pods */,
 				52D959216BC170E25CBF3B89 /* Frameworks */,
@@ -163,7 +144,6 @@
 			children = (
 				F3C0929525FB7087001FFAFB /* ReactiveCells.app */,
 				F3C092AB25FB708A001FFAFB /* ReactiveCellsTests.xctest */,
-				F3C092B625FB708A001FFAFB /* ReactiveCellsUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -186,15 +166,6 @@
 				F3C092B125FB708A001FFAFB /* Info.plist */,
 			);
 			path = ReactiveCellsTests;
-			sourceTree = "<group>";
-		};
-		F3C092B925FB708A001FFAFB /* ReactiveCellsUITests */ = {
-			isa = PBXGroup;
-			children = (
-				F3C092BA25FB708A001FFAFB /* ReactiveCellsUITests.swift */,
-				F3C092BC25FB708A001FFAFB /* Info.plist */,
-			);
-			path = ReactiveCellsUITests;
 			sourceTree = "<group>";
 		};
 		F3C092CE25FB70ED001FFAFB /* Scenes */ = {
@@ -310,24 +281,6 @@
 			productReference = F3C092AB25FB708A001FFAFB /* ReactiveCellsTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		F3C092B525FB708A001FFAFB /* ReactiveCellsUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = F3C092C525FB708A001FFAFB /* Build configuration list for PBXNativeTarget "ReactiveCellsUITests" */;
-			buildPhases = (
-				F3C092B225FB708A001FFAFB /* Sources */,
-				F3C092B325FB708A001FFAFB /* Frameworks */,
-				F3C092B425FB708A001FFAFB /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				F3C092B825FB708A001FFAFB /* PBXTargetDependency */,
-			);
-			name = ReactiveCellsUITests;
-			productName = ReactiveCellsUITests;
-			productReference = F3C092B625FB708A001FFAFB /* ReactiveCellsUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -341,10 +294,6 @@
 						CreatedOnToolsVersion = 12.4;
 					};
 					F3C092AA25FB708A001FFAFB = {
-						CreatedOnToolsVersion = 12.4;
-						TestTargetID = F3C0929425FB7087001FFAFB;
-					};
-					F3C092B525FB708A001FFAFB = {
 						CreatedOnToolsVersion = 12.4;
 						TestTargetID = F3C0929425FB7087001FFAFB;
 					};
@@ -365,7 +314,6 @@
 			targets = (
 				F3C0929425FB7087001FFAFB /* ReactiveCells */,
 				F3C092AA25FB708A001FFAFB /* ReactiveCellsTests */,
-				F3C092B525FB708A001FFAFB /* ReactiveCellsUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -383,13 +331,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		F3C092A925FB708A001FFAFB /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F3C092B425FB708A001FFAFB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -517,14 +458,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F3C092B225FB708A001FFAFB /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F3C092BB25FB708A001FFAFB /* ReactiveCellsUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -532,11 +465,6 @@
 			isa = PBXTargetDependency;
 			target = F3C0929425FB7087001FFAFB /* ReactiveCells */;
 			targetProxy = F3C092AC25FB708A001FFAFB /* PBXContainerItemProxy */;
-		};
-		F3C092B825FB708A001FFAFB /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = F3C0929425FB7087001FFAFB /* ReactiveCells */;
-			targetProxy = F3C092B725FB708A001FFAFB /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -756,46 +684,6 @@
 			};
 			name = Release;
 		};
-		F3C092C625FB708A001FFAFB /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9ZR496RB3Q;
-				INFOPLIST_FILE = ReactiveCellsUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.madebyhive.ReactiveCellsUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = ReactiveCells;
-			};
-			name = Debug;
-		};
-		F3C092C725FB708A001FFAFB /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9ZR496RB3Q;
-				INFOPLIST_FILE = ReactiveCellsUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.madebyhive.ReactiveCellsUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = ReactiveCells;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -822,15 +710,6 @@
 			buildConfigurations = (
 				F3C092C325FB708A001FFAFB /* Debug */,
 				F3C092C425FB708A001FFAFB /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		F3C092C525FB708A001FFAFB /* Build configuration list for PBXNativeTarget "ReactiveCellsUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				F3C092C625FB708A001FFAFB /* Debug */,
-				F3C092C725FB708A001FFAFB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
