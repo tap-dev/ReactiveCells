@@ -23,6 +23,7 @@ enum CartAction {
     case add(CartProduct)
     case increment(CartProduct)
     case decrement(CartProduct)
+    case checkout
 }
 
 struct CartViewModel {
@@ -35,10 +36,12 @@ struct CartViewModel {
     
         let cart = Observable
             .merge(
-                input.addProduct.map(randomProduct()),
-                incrementProductSubject.map(incrementedProduct()),
-                decrementProductSubject.map(decrementedProduct()))
-            .scan(CartState([CartSection([])])) { (state, action) in
+                input.addProduct.map { CartAction.add(CartProduct.random()) },
+                input.checkout.map { CartAction.checkout },
+                incrementProductSubject.map { CartAction.increment($0) },
+                decrementProductSubject.map { CartAction.decrement($0) })
+            
+            .scan(CartState.empty()) { (state, action) in
                 state.execute(action)
             }
             .map { $0.sections }
@@ -51,19 +54,7 @@ struct CartViewModel {
             checkoutVisible: cart.map(checkoutVisible())
                 .startWith((visible: false, animated: false)))
     }
-    
-    func randomProduct() -> () -> CartAction {
-        { CartAction.add(CartProduct.all.randomElement()!) }
-    }
-    
-    func incrementedProduct() -> (_ product: CartProduct) -> CartAction {
-        { CartAction.increment($0) }
-    }
-    
-    func decrementedProduct() -> (_ product: CartProduct) -> CartAction {
-        { CartAction.decrement($0) }
-    }
-    
+        
     func cartTotal() -> (_ cart: [CartSection]) -> String? {
         { $0[safe: 0]?.sectionTotal.decimalCurrencyString }
     }

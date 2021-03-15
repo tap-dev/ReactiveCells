@@ -77,4 +77,8 @@ extension CartProduct {
                     image: "green_tea")
         ]
     }
+    
+    static func random() -> CartProduct {
+        all.randomElement()!
+    }
 }

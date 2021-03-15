@@ -14,6 +14,10 @@ struct CartState {
         self.sections = sections
     }
     
+    static func empty() -> CartState {
+        CartState([CartSection([])])
+    }
+    
     func execute(_ action: CartAction) -> CartState {
         guard self.sections.count < 2 else { fatalError("CartState only supports 1 section") }
         switch action {
@@ -23,6 +27,8 @@ struct CartState {
             return CartState([increment(product, in: self.sections[0])])
         case .decrement(let product):
             return CartState([decrement(product, in: self.sections[0])])
+        case .checkout:
+            return .empty()
         }
     }
         

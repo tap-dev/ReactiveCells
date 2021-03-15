@@ -39,7 +39,7 @@ final class CartViewController: UIViewController {
 }
 
 extension CartViewController {
-    func dataSource() -> RxTableViewSectionedAnimatedDataSource<CartSection> {
+    private func dataSource() -> RxTableViewSectionedAnimatedDataSource<CartSection> {
         let animationConfiguration = AnimationConfiguration(insertAnimation: .left, reloadAnimation: .fade, deleteAnimation: .right)
         return RxTableViewSectionedAnimatedDataSource(animationConfiguration: animationConfiguration,
                                                       
