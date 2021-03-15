@@ -33,6 +33,6 @@ struct CartCellViewModel {
     var product: CartProduct? { row.products.first }
     var image: UIImage? { product?.productImage }
     var name: String? { product?.title }
-    var price: String? { product?.price.decimalCurrencyString }
+    var price: String? { row.rowTotal.decimalCurrencyString }
     var count: String { "\(row.products.count)" }
 }

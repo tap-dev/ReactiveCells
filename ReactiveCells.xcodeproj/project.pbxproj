@@ -13,7 +13,6 @@
 		F3C0929B25FB7087001FFAFB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C0929A25FB7087001FFAFB /* SceneDelegate.swift */; };
 		F3C092A225FB7089001FFAFB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3C092A125FB7089001FFAFB /* Assets.xcassets */; };
 		F3C092A525FB7089001FFAFB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3C092A325FB7089001FFAFB /* LaunchScreen.storyboard */; };
-		F3C092B025FB708A001FFAFB /* ReactiveCellsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C092AF25FB708A001FFAFB /* ReactiveCellsTests.swift */; };
 		F3C092BB25FB708A001FFAFB /* ReactiveCellsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C092BA25FB708A001FFAFB /* ReactiveCellsUITests.swift */; };
 		F3C092D225FB7147001FFAFB /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C092D125FB7147001FFAFB /* CartViewController.swift */; };
 		F3C092DA25FB7170001FFAFB /* CartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C092D925FB7170001FFAFB /* CartViewModel.swift */; };
@@ -72,7 +71,6 @@
 		F3C092A425FB7089001FFAFB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F3C092A625FB7089001FFAFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F3C092AB25FB708A001FFAFB /* ReactiveCellsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReactiveCellsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F3C092AF25FB708A001FFAFB /* ReactiveCellsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactiveCellsTests.swift; sourceTree = "<group>"; };
 		F3C092B125FB708A001FFAFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F3C092B625FB708A001FFAFB /* ReactiveCellsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReactiveCellsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3C092BA25FB708A001FFAFB /* ReactiveCellsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactiveCellsUITests.swift; sourceTree = "<group>"; };
@@ -187,7 +185,6 @@
 		F3C092AE25FB708A001FFAFB /* ReactiveCellsTests */ = {
 			isa = PBXGroup;
 			children = (
-				F3C092AF25FB708A001FFAFB /* ReactiveCellsTests.swift */,
 				F3C092B125FB708A001FFAFB /* Info.plist */,
 			);
 			path = ReactiveCellsTests;
@@ -521,7 +518,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F3C092B025FB708A001FFAFB /* ReactiveCellsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

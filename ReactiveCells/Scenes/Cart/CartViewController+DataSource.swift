@@ -13,13 +13,17 @@ extension CartViewController {
     static let dataSource: RxTableViewSectionedAnimatedDataSource<CartSection> = {
         let animationConfiguration = AnimationConfiguration(insertAnimation: .left, reloadAnimation: .fade, deleteAnimation: .right)
         return RxTableViewSectionedAnimatedDataSource(animationConfiguration: animationConfiguration,
-              
+                                                      
+          decideViewTransition: { _, _, changeset in
+            changeset.isEmpty ? .reload : .animated
+          },
+
           configureCell: { _, tableView, indexPath, row in
             CartCell.from(tableView, at: indexPath, configuredWith: CartCellViewModel(row: row))
           },
               
           canEditRowAtIndexPath: { _, _ in
-            return false
+            false
           })
     }()
 }
