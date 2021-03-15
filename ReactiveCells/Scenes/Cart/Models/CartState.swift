@@ -21,16 +21,16 @@ struct CartState {
         case .add(let product):
             return CartState([add(product, to: self.sections[0])])
         
-        case .increment(_):
+        case .increment(let product):
             print("INCREMENT")
-            return CartState([])
+            return CartState([increment(product, in: self.sections[0])])
         
-        case .decrement(_):
+        case .decrement(let product):
             print("DECREMENT")
-            return CartState([])
+            return CartState([decrement(product, in: self.sections[0])])
         }
     }
-    
+        
     private func add(_ product: CartProduct, to section: CartSection) -> CartSection {
         if let row = section.row(for: product) {
             let products = row.products + [product]
@@ -43,9 +43,36 @@ struct CartState {
             return CartSection(original: section, items: items)
         }
     }
+    
+    private func increment(_ product: CartProduct, in section: CartSection) -> CartSection {
+        if let row = section.row(for: product) {
+            let products = row.products + [product]
+            let newRow = CartRow(uuid: row.uuid, products: products)
+            return section.replacing(newRow)
+        
+        } else {
+            return section
+        }
+    }
+    
+    private func decrement(_ product: CartProduct, in section: CartSection) -> CartSection {
+        if let row = section.row(for: product) {
+            if row.products.count == 1 {
+                return section.removing(row)
+            } else {
+                let products = Array(row.products.dropLast())
+                let newRow = CartRow(uuid: row.uuid, products: products)
+                return section.replacing(newRow)
+            }
+        
+        } else {
+            return section
+        }
+    }
 }
 
 fileprivate extension CartSection {
+    
     func row(for product: CartProduct) -> CartRow? {
         return rows.filter { $0.products.contains(product) }.first
     }
@@ -54,6 +81,16 @@ fileprivate extension CartSection {
         if let index = rows.firstIndex(of: row) {
             var rows = self.rows
             rows[index] = row
+            return CartSection(original: self, items: rows)
+        } else {
+            return self
+        }
+    }
+    
+    func removing(_ row: CartRow) -> CartSection {
+        if let index = rows.firstIndex(of: row) {
+            var rows = self.rows
+            rows.remove(at: index)
             return CartSection(original: self, items: rows)
         } else {
             return self
