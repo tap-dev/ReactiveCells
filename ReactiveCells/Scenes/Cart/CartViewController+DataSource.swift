@@ -15,7 +15,7 @@ extension CartViewController {
         return RxTableViewSectionedAnimatedDataSource(animationConfiguration: animationConfiguration,
               
           configureCell: { _, tableView, indexPath, row in
-            CartCellConfigurator.cellFrom(tableView, at: indexPath, configuredWith: row)
+            CartCell.from(tableView, at: indexPath, configuredWith: CartCellViewModel(row: row))
           },
               
           canEditRowAtIndexPath: { _, _ in

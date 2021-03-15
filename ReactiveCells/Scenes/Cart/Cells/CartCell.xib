@@ -86,7 +86,10 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="countLabel" destination="dcQ-2g-nUT" id="xpZ-5e-S8P"/>
+                <outlet property="minusButton" destination="sKg-cG-eyQ" id="kjb-3Q-kIa"/>
                 <outlet property="nameLabel" destination="jkH-JX-WND" id="1LB-TZ-ibG"/>
+                <outlet property="plusButton" destination="4EJ-LK-dnU" id="K4H-uj-3Pf"/>
                 <outlet property="priceLabel" destination="ifH-RJ-JAQ" id="d2R-HI-8tD"/>
                 <outlet property="thumbImageView" destination="XPa-r6-bMc" id="0JB-rF-ZET"/>
             </connections>
