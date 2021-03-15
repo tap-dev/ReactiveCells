@@ -14,7 +14,7 @@ struct CartInput {
 
 struct CartOutput {
     let cart: Observable<[CartSection]>
-    let cartTotal: Observable<String>
+    let cartTotal: Observable<String?>
     let cartEmpty: Observable<Bool>
     let checkoutVisible: Observable<(visible: Bool, animated: Bool)>
 }
@@ -33,43 +33,46 @@ struct CartViewModel {
     var decrementProduct: AnyObserver<CartProduct> { decrementProductSubject.asObserver() }
     
     func bind(_ input: CartInput) -> CartOutput {
-        
-        //        let increment = incrementProductSubject
-        //            .asObservable()
-        //
-        //        let decrement = decrementProductSubject
-        //            .asObservable()
-        
+    
         let cart = Observable
             .merge(
-                input.addProduct.map(randomProduct()))
+                input.addProduct.map(randomProduct()),
+                incrementProductSubject.map(incrementedProduct()),
+                decrementProductSubject.map(decrementedProduct()))
             .scan(CartState([CartSection([])])) { (state, action) in
                 state.execute(action)
             }
             .map { $0.sections }
             .share()
         
-        let cartTotal = cart
-            .map { $0[0].sectionTotal }
-            .map { $0.decimalCurrencyString }
-        
-        let cartEmpty = cart
-            .map { $0[0].rows }
-            .map { $0.count == 0 }
-        
-        let checkoutVisible = cart
-            .map { $0[0].rows.count }
-            .map { $0 == 0 ? (visible: false, animated: true) : (visible: true, animated: true) }
-            .startWith((visible: false, animated: false))
-
         return CartOutput(
             cart: cart,
-            cartTotal: cartTotal,
-            cartEmpty: cartEmpty,
-            checkoutVisible: checkoutVisible)
+            cartTotal: cart.map(cartTotal()),
+            cartEmpty: cart.map(cartEmpty()),
+            checkoutVisible: cart.map(checkoutVisible()).startWith((visible: false, animated: false)))
     }
     
     func randomProduct() -> () -> CartAction {
         { CartAction.add(CartProduct.all.randomElement()!) }
+    }
+    
+    func incrementedProduct() -> (_ product: CartProduct) -> CartAction {
+        { CartAction.increment($0) }
+    }
+    
+    func decrementedProduct() -> (_ product: CartProduct) -> CartAction {
+        { CartAction.decrement($0) }
+    }
+    
+    func cartTotal() -> (_ cart: [CartSection]) -> String? {
+        { $0[safe: 0]?.sectionTotal.decimalCurrencyString }
+    }
+    
+    func cartEmpty() -> (_ cart: [CartSection]) throws -> Bool {
+        { $0[safe: 0]?.rows.count == 0 }
+    }
+    
+    func checkoutVisible() -> (_ cart: [CartSection]) throws -> (visible: Bool, animated: Bool) {
+        { $0[safe: 0]?.rows.count == 0 ? (visible: false, animated: true) : (visible: true, animated: true) }
     }
 }

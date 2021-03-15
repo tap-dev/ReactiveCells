@@ -38,6 +38,7 @@
 		F3F1B4C425FF3D3000D8A1D2 /* UITableView+Cells.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F1B4C325FF3D3000D8A1D2 /* UITableView+Cells.swift */; };
 		F3F1B4C925FF3D6A00D8A1D2 /* ReuseableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F1B4C825FF3D6A00D8A1D2 /* ReuseableView.swift */; };
 		F3F1B4CE25FF401300D8A1D2 /* Int+DecimalCurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F1B4CD25FF401300D8A1D2 /* Int+DecimalCurrency.swift */; };
+		F3F1B4D325FF7E5B00D8A1D2 /* Collection+Safe.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F1B4D225FF7E5B00D8A1D2 /* Collection+Safe.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +100,7 @@
 		F3F1B4C325FF3D3000D8A1D2 /* UITableView+Cells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Cells.swift"; sourceTree = "<group>"; };
 		F3F1B4C825FF3D6A00D8A1D2 /* ReuseableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReuseableView.swift; sourceTree = "<group>"; };
 		F3F1B4CD25FF401300D8A1D2 /* Int+DecimalCurrency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+DecimalCurrency.swift"; sourceTree = "<group>"; };
+		F3F1B4D225FF7E5B00D8A1D2 /* Collection+Safe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Safe.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -247,6 +249,7 @@
 				F3F1B4C325FF3D3000D8A1D2 /* UITableView+Cells.swift */,
 				F3F1B4C825FF3D6A00D8A1D2 /* ReuseableView.swift */,
 				F3F1B4CD25FF401300D8A1D2 /* Int+DecimalCurrency.swift */,
+				F3F1B4D225FF7E5B00D8A1D2 /* Collection+Safe.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -493,6 +496,7 @@
 				F3C0930825FB775D001FFAFB /* UIButton+AppStyles.swift in Sources */,
 				F3F1B4CE25FF401300D8A1D2 /* Int+DecimalCurrency.swift in Sources */,
 				F3C0930D25FB77B1001FFAFB /* UIColor+Adjustment.swift in Sources */,
+				F3F1B4D325FF7E5B00D8A1D2 /* Collection+Safe.swift in Sources */,
 				F3C092D225FB7147001FFAFB /* CartViewController.swift in Sources */,
 				F3C092F625FB7519001FFAFB /* UIFont+AppFonts.swift in Sources */,
 				F3C092DA25FB7170001FFAFB /* CartViewModel.swift in Sources */,
